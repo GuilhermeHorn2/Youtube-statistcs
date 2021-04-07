@@ -1,0 +1,91 @@
+canal = input("")
+
+n = int(input(''))
+
+l18 = []
+l18v = []
+l19 = []
+l19v = []
+l20 = []
+l20v = []
+i = 0
+at = 0
+while i < n:
+    d = input("").split('-')
+    v = int(input(''))
+    if int(d[0]) >= 2018 and int(d[0]) <= 2020:
+        if d[0] == '2018':
+            l18.append(d[0])
+            l18v.append(v)
+            at += 1
+        elif d[0] == '2019':
+            l19.append(d[0])
+            l19v.append(v)
+            at += 1
+        else:
+            l20.append(d[0])
+            l20v.append(v)
+            at += 1
+
+    i += 1
+
+total18 = sum(l18v)
+total19 = sum(l19v)
+total20 = sum(l20v)
+
+m18 = total18/len(l18v)
+m19 = total19/len(l19v)
+m20 = total20/len(l20v)
+
+
+t = total20 + total19 + total18
+
+mt = (t)/at
+
+if t != 0:
+    p18 = (total18 / t) * 100
+    p19 = (total19 / t) * 100
+    p20 = (total20 / t) * 100
+
+    a = format(p18, '.2f')
+    b = format(p19, '.2f')
+    c = format(p20, '.2f')
+
+
+else:
+    total18 = 0
+    total19 = 0
+    total20 = 0
+
+    m18 = 0
+    m19 = 0
+    m20 = 0
+
+    a = 'indeterminada'
+    b = 'indeterminada'
+    c = 'indeterminada'
+
+print('Canal:', canal)
+print('Total de views do trienio:', t)
+print('Media de views do trienio:', format(mt, '.2f'))
+
+print('')
+
+print('2018')
+print('Total:', total18)
+print('Porcentagem das views do trienio:', a)
+print('Media:', format(m18, '.2f'))
+
+print('')
+
+print('2019')
+print('Total:', total19)
+print('Porcentagem das views do trienio:', b)
+print('Media:', format(m19, '.2f'))
+
+print('')
+
+print('2020')
+print('Total:', total20)
+print('Porcentagem das views do trienio:', c)
+print('Media:', format(m20, '.2f'))
